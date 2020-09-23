@@ -24,6 +24,10 @@ class Board extends React.Component {
 
   handleClick(i) {
     const squares = this.state.squares.slice();
+
+    // function to return early by ignoring a click if someone 
+    // has won the game or if a Square is already filled:
+
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
